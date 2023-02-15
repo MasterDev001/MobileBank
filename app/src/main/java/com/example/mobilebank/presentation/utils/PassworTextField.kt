@@ -7,39 +7,29 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.mobilebank.R
+import com.example.mobilebank.presentation.theme.horizontalPadding_21
 
 @Composable
 fun PasswordTextField(
-    text:String,
+    text: String,
     hint: String,
     testTag: String = "",
     textStyle: TextStyle = TextStyle(),
     onValueChange: (String) -> Unit
 ) {
-    val password by rememberSaveable { mutableStateOf(text.isEmpty()) }
     var passwordVisibility by remember { mutableStateOf(false) }
-
-//    val icon = if (passwordVisibility) {
-//        painterResource(id = R.drawable.eye)
-//    } else {
-//        painterResource(id = R.drawable.eye_close)
-//    }
 
     OutlinedTextField(
         value = text,
-        onValueChange =onValueChange,
+        onValueChange = onValueChange,
         label = { Text(text = hint) },
         modifier = Modifier
             .fillMaxWidth()
@@ -59,7 +49,19 @@ fun PasswordTextField(
         placeholder = { Text(text = "Password") },
         trailingIcon = {
             IconButton(onClick = { passwordVisibility = !passwordVisibility }) {
-            Icon(painter = icon, contentDescription = "")
+                if (!passwordVisibility) {
+                    Text(
+                        text = "Show",
+                        color = Color.Black,
+                        modifier = Modifier.padding(end = horizontalPadding_21)
+                    )
+                } else {
+                    Text(
+                        text = "Hide",
+                        color = Color.Black,
+                        modifier = Modifier.padding(end = horizontalPadding_21)
+                    )
+                }
             }
         }
     )

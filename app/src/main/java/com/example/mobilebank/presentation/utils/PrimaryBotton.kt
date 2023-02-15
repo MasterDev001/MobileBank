@@ -17,15 +17,15 @@ fun PrimaryButton(text: String , onClick: () -> Unit) {
     Button(
         onClick = onClick,
         modifier = Modifier
-            .padding(horizontal = horizontalPadding_16)
+            .padding(horizontal = horizontalPadding_21)
             .fillMaxWidth()
             .height(primaryButtonHeight),
-        shape = RoundedCornerShape(primaryCornerRadius_12),
+        shape = RoundedCornerShape(primaryCornerRadius_16),
         colors = ButtonDefaults.buttonColors(
             backgroundColor = MaterialTheme.colorScheme.primary,
             contentColor = MaterialTheme.colorScheme.onPrimary
         )
     ) {
-        Text(text = text, fontSize = textSize_16sp)
+        Text(text = text, fontSize = textSize_21sp)
     }
 }
