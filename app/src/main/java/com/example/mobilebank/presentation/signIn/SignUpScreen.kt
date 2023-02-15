@@ -27,6 +27,7 @@ import com.example.mobilebank.presentation.theme.BankAppTheme
 class SignUpScreen : AndroidScreen() {
     @Composable
     override fun Content() {
+        //
         SignScreen()
     }
 
