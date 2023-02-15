@@ -9,9 +9,6 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -67,7 +64,7 @@ private fun CharView(
             .width(40.dp)
             .border(
                 1.dp, when {
-                    isFocused && index > 0 -> greenColor
+                    isFocused && index > 0 && codeCheck == 0 -> greenColor
                     codeCheck == CODE_IS_WRONG -> redColor
                     codeCheck == CODE_IS_RIGHT -> greenColor
                     else -> GreyLight
