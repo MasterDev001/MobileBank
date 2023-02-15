@@ -1,4 +1,4 @@
-package com.example.mobilebank.presentation.signIn
+package com.example.mobilebank.presentation.signUp
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
