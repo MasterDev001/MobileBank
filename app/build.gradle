@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+
 }
 
 android {
@@ -66,4 +68,19 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    def currentVersion = "1.0.0-rc03"
+    implementation "cafe.adriel.voyager:voyager-navigator:$currentVersion"
+    implementation "cafe.adriel.voyager:voyager-transitions:$currentVersion"
+    implementation "cafe.adriel.voyager:voyager-androidx:$currentVersion"
+    implementation "cafe.adriel.voyager:voyager-hilt:$currentVersion"
+    implementation "cafe.adriel.voyager:voyager-livedata:$currentVersion"
+
+
+    def hilt_version = '2.44.2'
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    implementation 'androidx.compose.material3:material3:1.0.1'
 }

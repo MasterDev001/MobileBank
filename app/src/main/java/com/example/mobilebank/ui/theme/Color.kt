@@ -1,4 +1,4 @@
-package com.example.mobilebank.presentation.ui.theme
+package com.example.mobilebank.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
