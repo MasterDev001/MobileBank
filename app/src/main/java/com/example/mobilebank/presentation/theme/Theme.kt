@@ -1,26 +1,22 @@
 package com.example.mobilebank.presentation.theme
 
 import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Color.White,
-    secondary = Color.White,
-    tertiary = Color.White
+    primary = Color.White, secondary = Color.White, tertiary = Color.White
 )
 private val LightColorScheme = lightColorScheme(
-    primary = primaryColor,
-    onPrimary = onPrimaryColor,
-    secondary = secondaryColor
+    primary = primaryColor, onPrimary = onPrimaryColor, secondary = secondaryColor
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -60,8 +56,6 @@ fun BankAppTheme(
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
+        colorScheme = colorScheme, typography = Typography, content = content
     )
 }

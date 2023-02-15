@@ -31,11 +31,11 @@ fun PasswordTextField(
     val password by rememberSaveable { mutableStateOf(text.isEmpty()) }
     var passwordVisibility by remember { mutableStateOf(false) }
 
-    val icon = if (passwordVisibility) {
-        painterResource(id = R.drawable.eye)
-    } else {
-        painterResource(id = R.drawable.eye_close)
-    }
+//    val icon = if (passwordVisibility) {
+//        painterResource(id = R.drawable.eye)
+//    } else {
+//        painterResource(id = R.drawable.eye_close)
+//    }
 
     OutlinedTextField(
         value = text,

@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import com.example.mobilebank.presentation.theme.*
 
 @Composable
-fun PrimaryButton(text: String, onClick: () -> Unit) {
+fun PrimaryButton(text: String , onClick: () -> Unit) {
     Button(
         onClick = onClick,
         modifier = Modifier

@@ -8,10 +8,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextFieldDefaults
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
@@ -27,13 +24,14 @@ fun AppTextField(
     keyboardType: KeyboardType = KeyboardType.Text,
     textStyle: TextStyle = TextStyle(),
     visualTransformation: VisualTransformation = VisualTransformation.None,
-    placeHolder: () -> Unit,
     onValueChange: (String) -> Unit
 ) {
-    val name by remember { mutableStateOf("") }
+    var name by remember {
+        mutableStateOf("")
+    }
     OutlinedTextField(
         value = name,
-        onValueChange = onValueChange,
+        onValueChange = { name = it },
         label = { Text(text = hint) },
         modifier = Modifier
             .fillMaxWidth()
@@ -45,7 +43,6 @@ fun AppTextField(
             unfocusedBorderColor = Color.Gray, unfocusedLabelColor = Color.Black
         ),
         keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
-        visualTransformation = visualTransformation,
-        placeholder = { placeHolder }
+        visualTransformation = visualTransformation
     )
 }
