@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
             BankAppTheme {
                 // A surface container using the 'background' color from the theme
 
-                Column(Modifier.fillMaxSize()) {
+      /*          Column(Modifier.fillMaxSize()) {
                     val text = remember { mutableStateOf("") }
                     val code = remember { mutableStateOf(0) }
 
@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
 //                        Text(text = "jaiosdhgiuohas")
 //                    }
 
-                }
+                }*/
 
 //                PasswordTextField(text = text.value, hint = "jga", onValueChange ={text.value=it} )
             }

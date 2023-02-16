@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -63,18 +63,12 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
+     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
+     // okhttp
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
-
-    def currentVersion = "1.0.0-rc03"
-    implementation "cafe.adriel.voyager:voyager-navigator:$currentVersion"
-    implementation "cafe.adriel.voyager:voyager-transitions:$currentVersion"
-    implementation "cafe.adriel.voyager:voyager-androidx:$currentVersion"
-    implementation "cafe.adriel.voyager:voyager-hilt:$currentVersion"
-    implementation "cafe.adriel.voyager:voyager-livedata:$currentVersion"
 
 
     //hilt
@@ -83,4 +77,40 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     implementation 'androidx.compose.material3:material3:1.0.1'
+
+    def currentVersion = "1.0.0-rc03"
+    // Navigator
+    implementation "cafe.adriel.voyager:voyager-navigator:$currentVersion"
+
+    // BottomSheetNavigator
+    implementation "cafe.adriel.voyager:voyager-bottom-sheet-navigator:$currentVersion"
+
+    // TabNavigator
+    implementation "cafe.adriel.voyager:voyager-tab-navigator:$currentVersion"
+
+    // Transitions
+    implementation "cafe.adriel.voyager:voyager-transitions:$currentVersion"
+
+    // Android ViewModel integration
+    implementation "cafe.adriel.voyager:voyager-androidx:$currentVersion"
+
+    // Hilt integration
+    implementation "cafe.adriel.voyager:voyager-hilt:$currentVersion"
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    //coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+
+    //room
+    def room_version = "2.4.0"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // To use Kotlin annotation processing tool (kapt)
+    implementation 'androidx.room:room-ktx:2.4.0'
+    kapt "androidx.room:room-compiler:2.4.0"
 }

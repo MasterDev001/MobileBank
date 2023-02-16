@@ -19,7 +19,7 @@ import com.example.mobilebank.presentation.theme.horizontalPadding_21
 
 @Composable
 fun PasswordTextField(
-    text: String,
+    text: String = "",
     hint: String,
     testTag: String = "",
     textStyle: TextStyle = TextStyle(),
