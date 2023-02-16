@@ -8,3 +8,4 @@ val primaryCornerRadius_16 = 16.dp
 val textSize_21sp = 21.sp
 val primaryButtonHeight = 74.dp
 val checkSmsFontSize=37.sp
+val checkSms_19sp=19.sp

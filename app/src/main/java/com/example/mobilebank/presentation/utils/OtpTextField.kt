@@ -65,7 +65,7 @@ private fun CharView(
             .border(
                 1.dp, when {
                     isFocused && index > 0 && codeCheck == 0 -> greenColor
-                    codeCheck == CODE_IS_WRONG -> redColor
+                    codeCheck == CODE_IS_WRONG  -> redColor
                     codeCheck == CODE_IS_RIGHT -> greenColor
                     else -> GreyLight
                 }, RoundedCornerShape(8.dp)
