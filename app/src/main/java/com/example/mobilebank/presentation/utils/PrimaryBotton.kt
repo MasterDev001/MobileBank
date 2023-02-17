@@ -1,5 +1,6 @@
 package com.example.mobilebank.presentation.utils
 
+
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -9,6 +10,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.mobilebank.presentation.theme.*
 
@@ -17,7 +19,7 @@ fun PrimaryButton(text: String , onClick: () -> Unit) {
     Button(
         onClick = onClick,
         modifier = Modifier
-            .padding(horizontal = horizontalPadding_21)
+            .padding(horizontal = horizontalPadding_16)
             .fillMaxWidth()
             .height(primaryButtonHeight),
         shape = RoundedCornerShape(primaryCornerRadius_16),

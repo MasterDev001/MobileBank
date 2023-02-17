@@ -10,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import cafe.adriel.voyager.androidx.AndroidScreen
 import com.example.mobilebank.presentation.theme.checkSmsColorGrey
 import com.example.mobilebank.presentation.theme.checkSms_19sp
 import com.example.mobilebank.presentation.theme.primaryColor
@@ -19,16 +20,16 @@ import com.example.mobilebank.presentation.utils.OtpTextField
 import com.example.mobilebank.presentation.utils.PrimaryButton
 import kotlinx.coroutines.delay
 
-//class CheckSmsScreen : AndroidScreen() {
-//
-//    @Composable
-//    override fun Content() {
-//        CheckSmsScreen()
-//    }
+class CheckSmsScreen : AndroidScreen() {
 
-@SuppressLint("NotConstructor")
+    @Composable
+    override fun Content() {
+        CheckSmsScreenContent("oisahdfo")
+    }
+}
+
 @Composable
-fun CheckSmsScreen(phone: String, wrongCodeState: Boolean = false) {
+fun CheckSmsScreenContent(phone: String, wrongCodeState: Boolean = false) {
     val code = remember { mutableStateOf("") }
 
     BackTopBar(text = "Verification", onClick = { }) {
@@ -91,5 +92,3 @@ fun OtpTimer(wrongCodeState: Boolean = false, sendAgainOnClick: () -> Unit) {
         )
     }
 }
-
-//}

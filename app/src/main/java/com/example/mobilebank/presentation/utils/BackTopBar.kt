@@ -12,10 +12,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import com.example.mobilebank.R
-import com.example.mobilebank.presentation.theme.horizontalPadding_21
+import com.example.mobilebank.presentation.theme.horizontalPadding_16
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -24,12 +25,13 @@ fun BackTopBar(
     text: String,
     modifier: Modifier = Modifier,
     fontSize: TextUnit = 20.sp,
+    fontWeight: FontWeight = FontWeight.Normal,
     style: TextStyle = TextStyle.Default,
     onClick: () -> Unit,
     content: @Composable (PaddingValues) -> Unit
 ) {
     Scaffold(
-        modifier = modifier.padding(start = horizontalPadding_21),
+        modifier = modifier.padding(start = horizontalPadding_16),
         topBar = {
             TopAppBar(
                 title = {
@@ -38,6 +40,7 @@ fun BackTopBar(
                             text = text,
                             fontSize = fontSize,
                             style = style,
+                            fontWeight=fontWeight
                         )
                     }
                 },

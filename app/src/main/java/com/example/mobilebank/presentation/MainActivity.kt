@@ -13,7 +13,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mobilebank.commons.CODE_IS_RIGHT
 import com.example.mobilebank.commons.CODE_IS_WRONG
+import com.example.mobilebank.presentation.addCard.AddCardScreen
+import com.example.mobilebank.presentation.addCard.AddCardScreenContent
 import com.example.mobilebank.presentation.checkSms.CheckSmsScreen
+import com.example.mobilebank.presentation.mainScreen.MainScreenContent
 import com.example.mobilebank.presentation.theme.*
 import com.example.mobilebank.presentation.utils.BackTopBar
 import com.example.mobilebank.presentation.utils.OtpTextField
@@ -28,11 +31,15 @@ class MainActivity : ComponentActivity() {
             BankAppTheme {
                 // A surface container using the 'background' color from the theme
 
-      /*          Column(Modifier.fillMaxSize()) {
+                Column(Modifier.fillMaxSize()) {
                     val text = remember { mutableStateOf("") }
                     val code = remember { mutableStateOf(0) }
 
-                    CheckSmsScreen(phone = text.value)
+                    AddCardScreenContent()
+//                    MainScreenContent {
+//
+//                    }
+//                    CheckSmsScreen(phone = text.value)
 //                    OtpTextField(
 //                        otpText = text.value,
 //                        codeCheck = code.value,
@@ -46,7 +53,7 @@ class MainActivity : ComponentActivity() {
 //                        Text(text = "jaiosdhgiuohas")
 //                    }
 
-                }*/
+                }
 
 //                PasswordTextField(text = text.value, hint = "jga", onValueChange ={text.value=it} )
             }

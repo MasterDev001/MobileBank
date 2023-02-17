@@ -15,7 +15,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.mobilebank.presentation.theme.horizontalPadding_21
+import com.example.mobilebank.presentation.theme.horizontalPadding_16
 
 @Composable
 fun PasswordTextField(
@@ -53,13 +53,13 @@ fun PasswordTextField(
                     Text(
                         text = "Show",
                         color = Color.Black,
-                        modifier = Modifier.padding(end = horizontalPadding_21)
+                        modifier = Modifier.padding(end = horizontalPadding_16)
                     )
                 } else {
                     Text(
                         text = "Hide",
                         color = Color.Black,
-                        modifier = Modifier.padding(end = horizontalPadding_21)
+                        modifier = Modifier.padding(end = horizontalPadding_16)
                     )
                 }
             }

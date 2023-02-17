@@ -1,19 +1,22 @@
-package com.example.mobilebank.presentation.sign_up.components
 
+
+import android.util.Log
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.text.input.VisualTransformation
 
-class DateTransFormation : VisualTransformation {
+class LastDateTransFormation : VisualTransformation {
 
-    // XX/XX/XXXX format
+    // XX/XX format
     override fun filter(text: AnnotatedString): TransformedText {
         var out = ""
         text.text.forEachIndexed { index, char ->
             when (index) {
-                2 -> out += "/$char"
-                4 -> out += "/$char"
+                2 -> {
+                    if (out.toInt() <= 12) out += "/$char"
+                    else out = "0" + out.first() + "/${out.last()}$char"
+                }
                 else -> out += char
             }
         }
@@ -30,6 +33,7 @@ class DateTransFormation : VisualTransformation {
                 return offset - 2
             }
         }
+
         return TransformedText(AnnotatedString(out), numberOffsetTranslator)
     }
 }

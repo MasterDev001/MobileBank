@@ -46,3 +46,34 @@ fun AppTextField(
         visualTransformation = visualTransformation
     )
 }
+
+@Composable
+fun AppTextFieldAddCard(
+    text: String,
+    label: String,
+    testTag: String = "",
+    keyboardType: KeyboardType = KeyboardType.Text,
+    textStyle: TextStyle = TextStyle(),
+    placeHolder:String="",
+    visualTransformation: VisualTransformation = VisualTransformation.None,
+    onValueChange: (String) -> Unit
+) {
+    OutlinedTextField(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 5.dp)
+            .testTag(testTag),
+        value = text,
+        onValueChange = { onValueChange(it) },
+        label = { Text(text = label) },
+        placeholder = { Text(text = placeHolder) },
+        shape = RoundedCornerShape(CornerSize(12.dp)),
+        textStyle = textStyle,
+        colors = TextFieldDefaults.outlinedTextFieldColors(
+            unfocusedBorderColor = Color.Gray, unfocusedLabelColor = Color.Black
+        ),
+        keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
+        visualTransformation = visualTransformation,
+
+        )
+}
