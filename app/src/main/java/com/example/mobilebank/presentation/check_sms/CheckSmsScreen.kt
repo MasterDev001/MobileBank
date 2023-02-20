@@ -1,16 +1,14 @@
-package com.example.mobilebank.presentation.checkSms
+package com.example.mobilebank.presentation.check_sms
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import cafe.adriel.voyager.androidx.AndroidScreen
+import com.example.mobilebank.di.navigation.AppScreen
 import com.example.mobilebank.presentation.theme.checkSmsColorGrey
 import com.example.mobilebank.presentation.theme.checkSms_19sp
 import com.example.mobilebank.presentation.theme.primaryColor
@@ -20,11 +18,11 @@ import com.example.mobilebank.presentation.utils.OtpTextField
 import com.example.mobilebank.presentation.utils.PrimaryButton
 import kotlinx.coroutines.delay
 
-class CheckSmsScreen : AndroidScreen() {
+class CheckSmsScreen(private val phone:String): AppScreen() {
 
     @Composable
     override fun Content() {
-        CheckSmsScreenContent("oisahdfo")
+        CheckSmsScreenContent(phone)
     }
 }
 
@@ -71,7 +69,7 @@ fun OtpTimer(wrongCodeState: Boolean = false, sendAgainOnClick: () -> Unit) {
         Text(
             text = "Send Again",
             color = primaryColor,
-            style = MaterialTheme.typography.body1,
+            style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier
                 .padding(16.dp)
                 .clickable { sendAgainOnClick() }
@@ -79,7 +77,7 @@ fun OtpTimer(wrongCodeState: Boolean = false, sendAgainOnClick: () -> Unit) {
     } else if (wrongCodeState) {
         Text(
             text = "Please try again with a password error!",
-            style = MaterialTheme.typography.body1,
+            style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier.padding(16.dp),
             color = redColor
         )
@@ -87,7 +85,7 @@ fun OtpTimer(wrongCodeState: Boolean = false, sendAgainOnClick: () -> Unit) {
     } else {
         Text(
             text = "Time left: ${timeLeft / 60}:${timeLeft % 60}",
-            style = MaterialTheme.typography.body1,
+            style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier.padding(16.dp)
         )
     }

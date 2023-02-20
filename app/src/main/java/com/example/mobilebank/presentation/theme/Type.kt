@@ -1,6 +1,5 @@
 package com.example.mobilebank.presentation.theme
 
-import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -13,5 +12,5 @@ val poppins = FontFamily(
     Font(R.font.poppins_medium, FontWeight.SemiBold)
 )
 
-val Typography =
-    Typography(bodyLarge = TextStyle(fontFamily = poppins, fontWeight = FontWeight.Normal))
+//val Typography =
+//    Typography(bodyLarge = TextStyle(fontFamily = poppins, fontWeight = FontWeight.Normal))

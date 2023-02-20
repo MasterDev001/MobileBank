@@ -1,8 +1,11 @@
 package com.example.mobilebank.di.navigation
 
 import kotlinx.coroutines.flow.MutableSharedFlow
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class AppNavigatorDispatcher : AppNavigationHandler, AppNavigator {
+@Singleton
+class AppNavigatorDispatcher @Inject constructor() : AppNavigationHandler, AppNavigator {
 
     override val navigation = MutableSharedFlow<NavigationArgs>()
     override suspend fun back() = navigator {

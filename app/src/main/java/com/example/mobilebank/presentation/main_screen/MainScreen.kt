@@ -1,4 +1,4 @@
-package com.example.mobilebank.presentation.mainScreen
+package com.example.mobilebank.presentation.main_screen
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
@@ -16,16 +16,16 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import cafe.adriel.voyager.androidx.AndroidScreen
 import com.example.mobilebank.R
+import com.example.mobilebank.di.navigation.AppScreen
 import com.example.mobilebank.domain.model.CardModel
 import com.example.mobilebank.presentation.theme.*
 
-class MainScreen : AndroidScreen() {
+class MainScreen : AppScreen() {
 
     @Composable
     override fun Content() {
-//        MainScreenContent()
+        MainScreenContent(){}
     }
 
 }

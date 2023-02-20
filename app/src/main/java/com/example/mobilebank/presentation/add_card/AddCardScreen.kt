@@ -1,28 +1,25 @@
-package com.example.mobilebank.presentation.addCard
+package com.example.mobilebank.presentation.add_card
 
 import LastDateTransFormation
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.core.text.isDigitsOnly
-import cafe.adriel.voyager.androidx.AndroidScreen
+import com.example.mobilebank.di.navigation.AppScreen
 import com.example.mobilebank.presentation.utils.AppTextFieldAddCard
 import com.example.mobilebank.presentation.utils.BackTopBar
 import com.example.mobilebank.presentation.utils.PrimaryButton
 
-class AddCardScreen : AndroidScreen() {
+class AddCardScreen : AppScreen() {
 
     @Composable
     override fun Content() {
-//        AddCardScreenContent()
+        AddCardScreenContent()
     }
 }
 

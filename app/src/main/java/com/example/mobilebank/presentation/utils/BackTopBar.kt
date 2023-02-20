@@ -2,11 +2,10 @@ package com.example.mobilebank.presentation.utils
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Icon
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -19,7 +18,6 @@ import com.example.mobilebank.R
 import com.example.mobilebank.presentation.theme.horizontalPadding_16
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BackTopBar(
     text: String,

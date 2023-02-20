@@ -1,7 +1,6 @@
 package com.example.mobilebank.di.navigation
 
 interface AppNavigator {
-
     suspend fun back()
     suspend fun navigateTo(screen: AppScreen)
     suspend fun navigateTo(screens: List<AppScreen>)
