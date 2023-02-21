@@ -22,8 +22,8 @@ class SignUpViewModelImpl @Inject constructor(
         when (intent) {
             is SignUpContract.Intent.ToSmsCheck -> {
                 viewModelScope.launch {
-                    val verify=useCases.signUpUseCase(intent.signUpModel)
-                    signUpDirections.toCheckSmsScreen(intent.signUpModel.phone)
+//                    val verify=useCases.signUpUseCase(intent.signUpModel)
+//                    signUpDirections.toCheckSmsScreen(intent.signUpModel.phone)
                 }
             }
             is SignUpContract.Intent.ToSignIn -> {

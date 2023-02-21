@@ -2,8 +2,8 @@ package com.example.mobilebank.presentation.check_sms
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -69,7 +69,7 @@ fun OtpTimer(wrongCodeState: Boolean = false, sendAgainOnClick: () -> Unit) {
         Text(
             text = "Send Again",
             color = primaryColor,
-            style = MaterialTheme.typography.bodyLarge,
+            style = MaterialTheme.typography.h1,
             modifier = Modifier
                 .padding(16.dp)
                 .clickable { sendAgainOnClick() }
@@ -77,7 +77,7 @@ fun OtpTimer(wrongCodeState: Boolean = false, sendAgainOnClick: () -> Unit) {
     } else if (wrongCodeState) {
         Text(
             text = "Please try again with a password error!",
-            style = MaterialTheme.typography.bodyLarge,
+            style = MaterialTheme.typography.h1,
             modifier = Modifier.padding(16.dp),
             color = redColor
         )
@@ -85,7 +85,7 @@ fun OtpTimer(wrongCodeState: Boolean = false, sendAgainOnClick: () -> Unit) {
     } else {
         Text(
             text = "Time left: ${timeLeft / 60}:${timeLeft % 60}",
-            style = MaterialTheme.typography.bodyLarge,
+            style = MaterialTheme.typography.h1,
             modifier = Modifier.padding(16.dp)
         )
     }
